@@ -1,0 +1,30 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+}
+.modal.open { display: block; }
+.modal-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -56%);
+  width: min(420px, calc(100% - 32px));
+  padding: 16px;
+  z-index: 30;
+}
+.title { font-weight: 800; font-size: 18px; }
+.msg { margin-top: 8px; color: #4b5563; }
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(2px);
+  z-index: 20;
+}

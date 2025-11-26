@@ -1,0 +1,11 @@
+<div class="modal" [class.open]="open">
+  <div class="modal-panel card" role="dialog" aria-modal="true" [attr.aria-hidden]="!open ? 'true' : null">
+    <h3 class="title">{{ title }}</h3>
+    <p class="msg">{{ message }}</p>
+    <div class="footer">
+      <button class="btn ghost" type="button" (click)="cancel.emit()">{{ cancelText }}</button>
+      <button class="btn danger" type="button" (click)="confirm.emit()">{{ confirmText }}</button>
+    </div>
+  </div>
+  <div class="backdrop" (click)="cancel.emit()"></div>
+</div>

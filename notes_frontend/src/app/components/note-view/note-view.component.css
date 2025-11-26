@@ -1,0 +1,36 @@
+.viewer {
+  padding: 16px;
+  min-height: 200px;
+}
+.viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.title {
+  font-size: 22px;
+  font-weight: 800;
+}
+.meta {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 12px;
+}
+.content {
+  margin-top: 14px;
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  overflow: auto;
+}
+.content pre {
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.empty {
+  padding: 24px;
+  text-align: center;
+  color: #6b7280;
+}

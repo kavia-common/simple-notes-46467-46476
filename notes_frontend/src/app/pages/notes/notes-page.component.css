@@ -1,0 +1,24 @@
+.main {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 16px;
+}
+
+.sidebar, .content {
+  min-height: 200px;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .sidebar { order: 2; }
+  .content { order: 1; }
+}

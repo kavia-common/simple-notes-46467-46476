@@ -1,0 +1,31 @@
+<div class="list card">
+  <div class="list-header">
+    <input
+      class="input"
+      type="text"
+      placeholder="Search notes..."
+      [value]="query()"
+      (input)="query.set(($any($event.target)).value)"
+      aria-label="Search notes"
+    />
+    <button class="btn" type="button" (click)="create.emit()">+ New Note</button>
+  </div>
+
+  <div class="items">
+    <div
+      class="list-item item"
+      *ngFor="let n of filtered(); trackBy: trackById"
+      [class.active]="n.id === activeId"
+      (click)="select.emit(n.id)"
+    >
+      <div class="item-header">
+        <h3 class="item-title">{{ n.title }}</h3>
+        <span class="badge">{{ fmt(n.updatedAt) }}</span>
+      </div>
+      <p class="item-preview">{{ preview(n.content) || 'No content' }}</p>
+    </div>
+    <div *ngIf="filtered().length === 0" class="empty">
+      <p>No notes match your search.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="viewer card" *ngIf="note as n; else empty">
+  <div class="viewer-header">
+    <h2 class="title">{{ n.title }}</h2>
+    <div class="actions">
+      <button class="btn ghost" type="button" (click)="edit.emit()">Edit</button>
+      <button class="btn danger" type="button" (click)="delete.emit()">Delete</button>
+    </div>
+  </div>
+  <div class="meta">
+    <span>Updated {{ fmt(n.updatedAt) }}</span>
+  </div>
+  <div class="content">
+    <pre>{{ n.content || 'No content yet.' }}</pre>
+  </div>
+</div>
+
+<ng-template #empty>
+  <div class="empty card">
+    <p>Select a note to view its content, or create a new one.</p>
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+<div class="drawer" [class.open]="open">
+  <div class="drawer-panel card" role="dialog" aria-modal="true" [attr.aria-hidden]="!open ? 'true' : null">
+    <div class="drawer-header">
+      <h3>{{ (model.id ? 'Edit' : 'New') + ' Note' }}</h3>
+      <button class="btn ghost" type="button" (click)="cancel.emit()">Close</button>
+    </div>
+    <div class="drawer-body">
+      <label class="label">Title <span class="req">*</span></label>
+      <input class="input" [(ngModel)]="local.title" placeholder="Enter a title" />
+      <div class="error" *ngIf="error">{{ error }}</div>
+
+      <label class="label mt">Content</label>
+      <textarea class="input" rows="10" [(ngModel)]="local.content" placeholder="Write your note..."></textarea>
+    </div>
+    <div class="drawer-footer">
+      <button class="btn ghost" type="button" (click)="cancel.emit()">Cancel</button>
+      <button class="btn" type="button" (click)="submit()">Save</button>
+    </div>
+  </div>
+  <div class="backdrop" (click)="cancel.emit()"></div>
+</div>
